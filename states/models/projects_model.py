@@ -1,4 +1,5 @@
 from django.db import models
+from ..models import Department
 
 
 class Projects(models.Model):
@@ -7,6 +8,7 @@ class Projects(models.Model):
     area = models.SmallIntegerField(null=True, blank=True)
     min_price = models.SmallIntegerField(null=True, blank=True)
     max_price = models.SmallIntegerField(null=True, blank=True)
+    department = models.ForeignKey(Department, null=True, blank=True, related_name='projects', on_delete=models.CASCADE)
 
     def __str__(self) -> str:
         return f"Name : {self.project_name}"

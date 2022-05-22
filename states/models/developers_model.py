@@ -3,9 +3,10 @@ from django.templatetags.static import static
 
 
 class Developers(models.Model):
-    name = models.CharField(max_length=255, null=True, blank=True, help_text='Department Name')
+    name = models.CharField(max_length=255, null=True, blank=True, help_text='Developer Name')
     description = models.TextField(null=True, blank=True)
     icon = models.ImageField(upload_to='developers-icons/', null=True, blank=True)
+    location = models.CharField(max_length=255, null=True, blank=True, help_text='Developer Location')
 
     @property
     def background_url(self):
