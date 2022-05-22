@@ -1,4 +1,6 @@
-<section class="py-0" id="flights">
+{% load static %}
+{% if projects.count < 10 %}
+    <section class="py-0" id="flights">
         <div class="container-fluid">
           <div class="row pt-4">
             <div class="col-lg-7 mx-auto text-center mb-6">
@@ -83,3 +85,36 @@
         <!-- end of .container-->
 
       </section>
+{% else %}
+<section class="py-0" id="flights">
+        <div class="container-fluid">
+          <div class="row pt-4">
+            <div class="col-lg-7 mx-auto text-center mb-6">
+              <h5 class="fw-bold fs-3 fs-lg-5 lh-sm mb-3 text-primary">أفضل الكمبوندات بأفضل الأسعار</h5>
+            </div>
+          </div>
+          <div class="row g-0 flex-center">
+              {% for project in projects %}
+                  {% if project.CheckEvenPK %}
+                      <div class="col-12 col-sm-4 col-md-3 col-lg-4 col-xl-2">
+              <div class="d-flex flex-column justify-content-center px-3" style="background-color:#7013CE; min-height:230px;">
+                <h5 class="text-light">{{ project.project_name }}/h5>
+                <h6 class="text-light fw-normal fs-0">من {{ project.min_price }} </h6>جنية<svg class="svg-inline--fa fa-arrow-right fa-w-14 text-light mt-4" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="arrow-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"></path></svg><!-- <i class="fas fa-arrow-right text-light mt-4"></i> Font Awesome fontawesome.com --><a class="stretched-link" href="#!"></a>
+              </div>
+            </div>
+                      {% else %}
+                      <div class="col-12 col-sm-4 col-md-3 col-lg-4 col-xl-2">
+              <div class="d-flex flex-column justify-content-center px-3" style="background-color:#240D8C; min-height:230px; ">
+                <h5 class="text-light">{{ project.project_name }}/h5>
+                <h6 class="text-light fw-normal fs-0">من {{ project.min_price }} </h6>جنية<svg class="svg-inline--fa fa-arrow-right fa-w-14 text-light mt-4" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="arrow-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"></path></svg><!-- <i class="fas fa-arrow-right text-light mt-4"></i> Font Awesome fontawesome.com --><a class="stretched-link" href="#!"></a>
+              </div>
+            </div>
+                 {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+        <!-- end of .container-->
+
+      </section>
+
+{% endif %}

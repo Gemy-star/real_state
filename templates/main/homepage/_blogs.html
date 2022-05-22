@@ -10,7 +10,8 @@
             <div class="col-lg-8 bg-white">
               <div class="carousel slide" id="carouselShare" data-bs-ride="carousel">
                 <div class="carousel-inner">
-                  <div class="carousel-item active" data-bs-interval="10000">
+                    {% if blogs.0 == None %}
+                                      <div class="carousel-item active" data-bs-interval="10000">
                     <div class="row h-100">
                       <div class="col-12"><img class="w-100" src="{% static 'assets/img/gallery/dubai.png' %}" height="600" alt="...">
                         <div class="pt-5 ps-sm-7">
@@ -21,6 +22,20 @@
                       </div>
                     </div>
                   </div>
+                   {% else %}
+                        <div class="carousel-item active" data-bs-interval="10000">
+                    <div class="row h-100">
+                      <div class="col-12"><img class="w-100" src="{{ blogs.0.background_url }}" height="600" alt="...">
+                        <div class="pt-5 ps-sm-7">
+                          <h4 class="mb-2 text-1000">كل ما تريد معرفتة عن</h4>
+                          <h2 class="mb-3 text-primary fs-3 fs-md-6">{{ blogs.0.project.project_name }}</h2>
+                          <p class="fw-normal mb-0">{{ blogs.0.mini_description }}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                    {% endif %}
+                                    {% if blogs.1 == None %}
                   <div class="carousel-item" data-bs-interval="2000">
                     <div class="row h-100">
                       <div class="col-12"><img class="w-100" src="{% static 'assets/img/gallery/cinnamon.png' %}" height="600" alt="...">
@@ -32,6 +47,20 @@
                       </div>
                     </div>
                   </div>
+                 {% else %}
+                                  <div class="carousel-item" data-bs-interval="2000">
+                    <div class="row h-100">
+                      <div class="col-12"><img class="w-100" src="{{ blogs.1.background_url }}" height="600" alt="...">
+                        <div class="pt-5 ps-sm-7">
+                          <h4 class="mb-2 text-1000">كل ما تريد معرفتة عن</h4>
+                          <h2 class="mb-3 text-primary fs-3 fs-md-6">{{ blogs.1.project.project_name }}</h2>
+                          <p class="fw-normal mb-0">{{ blogs.1.mini_description }}  </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                {% endif %}
+                                                    {% if blogs.2 == None %}
                   <div class="carousel-item" data-bs-interval="1000">
                     <div class="row h-100">
                       <div class="col-12"><img class="w-100" src="{% static 'assets/img/gallery/dhigu.png' %}" height="600" alt="...">
@@ -43,6 +72,20 @@
                       </div>
                     </div>
                   </div>
+                {% else %}
+                         <div class="carousel-item" data-bs-interval="1000">
+                    <div class="row h-100">
+                      <div class="col-12"><img class="w-100" src="{{ blogs.2.background_url }}" height="600" alt="...">
+                        <div class="pt-5 ps-sm-7">
+                          <h4 class="mb-2 text-1000">كل ما تريد معرفتة عن</h4>
+                          <h2 class="mb-3 text-primary fs-3 fs-md-6">{{ blogs.2.project.project_name }}</h2>
+                          <p class="fw-normal mb-0">{{ blogs.2.mini_description }}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                {% endif %}
+                                                                    {% if blogs.3 == None %}
                   <div class="carousel-item">
                     <div class="row h-100">
                       <div class="col-12"><img class="w-100" src="{% static 'assets/img/gallery/dubai.png' %}" height="600" alt="...">
@@ -54,6 +97,20 @@
                       </div>
                     </div>
                   </div>
+                {% else %}
+                                  <div class="carousel-item">
+                    <div class="row h-100">
+                      <div class="col-12"><img class="w-100" src="{{ blogs.3.background_url }}" height="600" alt="...">
+                        <div class="pt-5 ps-sm-7">
+                          <h4 class="mb-2 text-1000">كل ما تريد معرفتة عن</h4>
+                          <h2 class="mb-3 text-primary fs-3 fs-md-6">{ blogs.3.project.project_name }}</h2>
+                          <p class="fw-normal mb-0">{{ blogs.3.mini_description }}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                {% endif %}
                 </div>
                 <div class="row ps-sm-7 align-items-end">
                   <div class="col-4 col-sm-6 position-relative z-index-2">

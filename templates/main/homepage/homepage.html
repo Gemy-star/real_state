@@ -6,10 +6,10 @@
 {% include 'main/homepage/_search.html' %}
 </section>
 {% include 'main/homepage/_whyus.html' %}
-{% include 'main/homepage/_departments.html' %}
+{% include 'main/homepage/_departments.html' with departments=departments %}
 {% include 'main/homepage/_properties.html'  %}
 {% include 'main/homepage/_developers.html' with developers=developers %}
-{% include 'main/homepage/_blogs.html' %}
-{% include 'main/homepage/_compounds.html' %}
+{% include 'main/homepage/_blogs.html' with blogs=blogs %}
+{% include 'main/homepage/_compounds.html' with projects=projects %}
 
 {% endblock content %}
