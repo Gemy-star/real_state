@@ -18576,6 +18576,17 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   border-bottom-color: #FE7A15;
 }
 
+.contact-pic {
+  height: 75vh;
+}
+
+@media (min-width: 992px) {
+  .contact-pic {
+    height: 85vh;
+  }
+}
+
+
 /*-----------------------------------------------
 |   User Styles
 -----------------------------------------------*/

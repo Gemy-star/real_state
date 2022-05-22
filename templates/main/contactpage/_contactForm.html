@@ -1,0 +1,33 @@
+{% load static %}
+{% load crispy_forms_tags %}
+<section class="py-7" id="places">
+    <div class="container">
+                                    <div class="row">
+                                <div class="col-lg-6 col-12"><img class="w-100 contact-pic"
+                                                         src="{% static 'assets/img/gallery/dubai.png' %}"
+                                                         width="383" alt="...">
+                                </div>
+                                        <div class="col-lg-6 col-12">
+                                          <div class="py-4">
+                                        <h4 class="mb-2 text-1000">جو بروبرتى</h4>
+                                        <h2 class="mb-3 text-primary fs-3 fs-md-6">إتصل بنا</h2>
+                                        <div class="col-lg-9 col-12 justify-content-center">
+                                            <form method="post">
+                                                {% if messages %}
+                                                    {% include 'partials/_messages.html' %}
+                                                {% else %}
+                                                    {% csrf_token %}
+                                                    {{ form|crispy }}
+                                                   <div class="text-center pt-2">
+                                                    <button class="btn btn-outline-primary btn-sm" type="submit"><span
+                                                            class="text-primary">إرسال</span></button>
+                                                   </div>
+                                                {% endif %}
+                                            </form>
+
+                                        </div>
+                                    </div>
+                                        </div>
+                            </div>
+    </div>
+</section>
